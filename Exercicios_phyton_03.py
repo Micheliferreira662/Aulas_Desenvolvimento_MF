@@ -1,5 +1,5 @@
 '''Desenvolver uma API RESTful completa para gerenciar uma lista de tarefas (To-Do list). A implementação deve ser feita em Python utilizando um framework de sua escolha (sugestão: FastAPI ou Flask). Para simplificar o projeto e focar na lógica da API, o armazenamento de dados deve ser realizado em um banco de dados em memória (um dicionário ou lista em Python).
-Adicionalmente, você deve criar uma suíte de testes unitários (sugestão: usando unittest ou Pytest) para validar todas as funcionalidades da API, garantindo que ela se comporte conforme o esperado.'''
+Adicionalmente, você deve criar uma suíte de testes unitários (sugestão: usando unittest ou Pytest) para validar todas as funcionalidades da API, garantindo que ela se comporte conforme o esperado.
 Entidade Principal: Tarefa
 A API deve gerenciar recursos do tipo Tarefa, que possuem os seguintes atributos:
 id (string ou int): Identificador único da tarefa, que deve ser gerado automaticamente pela API.
@@ -33,10 +33,8 @@ Endpoint: DELETE /tarefas/{id}
 Resposta de Sucesso (Código 204 No Content): Retorna uma resposta sem corpo, indicando que o recurso foi removido com sucesso.
 Resposta de Erro (Código 404 Not Found): Retorna se nenhuma tarefa com o id especificado for encontrada.
 2. Requisitos de Testes Unitários
-
 Você deve criar testes automatizados para garantir que cada endpoint funcione corretamente nos seguintes cenários:
-
-'''Criação de Tarefa:
+Criação de Tarefa:
 Testar a criação bem-sucedida.
 Testar a falha na criação por falta do campo titulo.
 Listagem de Tarefas:
@@ -61,7 +59,7 @@ app = FastAPI(
     title="API de Tarefas (To-Do List)",
     description="API para realizar operações CRUD em tarefas.",
     version="1.0.0"'''
-)'''
+)
 # Modelo de dados da tarefa usando Pydantic
 class Tarefa(BaseModel):
     titulo: str = Field(..., min_length=3, description="Título da tarefa (mínimo 3 caracteres)")
